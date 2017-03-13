@@ -1,0 +1,10 @@
+<h2>{{data.title}}</h2>
+
+<div class="tiles">
+    <div class="tile" *ngFor="let tile of data.data" [ngStyle]="{'background-image': 'url(http://localhost:4000/api/1.0.0/' + tile.fields.image.cropped.asset.url + ')'}">
+        <div class="tile-inner">
+            <h4>{{tile.fields.title}}</h4>
+            <p>{{tile.fields.description}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+/* styles for faq view only */
+:host {
+    display: block;
+    padding: 48px 0;
+}
+
+.questions {
+    .question {
+        margin-bottom: 48px;
+    }
+}

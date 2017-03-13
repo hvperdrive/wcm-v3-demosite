@@ -1,0 +1,8 @@
+<h2>{{data.title}}</h2>
+
+<div class="manifestos clearfix">
+    <div class="manifesto col-xs-12 col-md-4 col-lg-4" *ngFor="let manifesto of data.data">
+        <h3>{{manifesto.fields.title}}</h3>
+        <p>{{manifesto.fields.content}}</p>
+    </div>
+</div>

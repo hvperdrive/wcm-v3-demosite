@@ -1,0 +1,39 @@
+<aui-footer>
+    <aui-footer-column-first>
+        <h5>{{data.fields.text.fields.text}}</h5>
+    </aui-footer-column-first>
+
+    <aui-footer-column-second>
+        <h5 translate>Social Media</h5>
+        <p>
+            <a href="{{data.fields.social.fields.facebook.url}}" class="button small has-icon btn-facebook" target="_blank">
+                <span class="fa fa-facebook"></span>
+                <span class="button-text">{{data.fields.social.fields.facebook.description}}</span>
+            </a>
+            <a href="{{data.fields.social.fields.twitter.url}}" class="button small has-icon btn-twitter" target="_blank">
+                <span class="fa fa-twitter"></span>
+                <span class="button-text">{{data.fields.social.fields.twitter.description}}</span>
+            </a>
+            <a href="{{data.fields.social.fields.instagram.url}}" class="button small has-icon btn-instagram" target="_blank">
+                <span class="fa fa-instagram"></span>
+                <span class="button-text">{{data.fields.social.fields.instagram.description}}</span>
+            </a>
+        </p>
+    </aui-footer-column-second>
+
+    <aui-footer-column-third>
+        <h5 translate>See this website in:</h5>
+        <ul>
+            <li translate (click)="setLanguage('nl')">Dutch</li>
+            <li translate (click)="setLanguage('en')">English</li>
+        </ul>
+    </aui-footer-column-third>
+
+    <aui-footer-column-bottom>
+        <!-- Use subfooter -->
+        <aui-subfooter>
+            <!-- Use copyright -->
+            <aui-copyright domain="district01.be"></aui-copyright>
+        </aui-subfooter>
+    </aui-footer-column-bottom>
+</aui-footer>

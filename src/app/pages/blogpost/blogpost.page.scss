@@ -1,0 +1,12 @@
+/* styles for blogpost content only */
+:host {
+    display: block;
+}
+
+.main-section {
+    .inner {
+        .post {
+            padding: 24px;
+        }
+    }
+}

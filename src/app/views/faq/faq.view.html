@@ -1,0 +1,8 @@
+<h2>{{data.title}}</h2>
+
+<div class="questions">
+    <div class="question" *ngFor="let question of data.data">
+        <h3>{{question.fields.question}}</h3>
+        <div [innerHTML]="question.fields.answer"></div>
+    </div>
+</div>

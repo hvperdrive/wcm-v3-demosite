@@ -1,0 +1,25 @@
+<h2>{{data.title}}</h2>
+
+<table class="contrast">
+    <thead>
+        <tr>
+            <th translate>Challenge</th>
+            <th translate>Deadline</th>
+            <th translate>Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let challenge of data.data">
+            <td>
+                <h3>{{challenge.fields.title}}</h3>
+                <p>{{challenge.fields.description}}</p>
+            </td>
+            <td>
+                {{challenge.fields.deadline}}
+            </td>
+            <td>
+                <a href="{{challenge.fields.formReference}}" rel="external" target="_blank" translate>learn more</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,20 @@
+/* styles for footer partial only */
+@import "sasskit/dist/scss/api";
+
+:host {
+    display: block;
+}
+
+.button {
+    .btn-facebook {
+        background-color: #3B5998;
+    }
+
+    .btn-twitter {
+        background-color: #00ACED;
+    }
+
+    .btn-instagram {
+        background-color: #3F729B;
+    }
+}

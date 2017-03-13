@@ -1,0 +1,8 @@
+<h2>{{data.title}}</h2>
+
+<div class="featured-items clearfix">
+    <div class="featured-item col-xs-12 col-md-4 col-lg-4" *ngFor="let item of data.data">
+        <h3>{{item.fields.title}}</h3>
+        <p>{{item.fields.description}}</p>
+    </div>
+</div>

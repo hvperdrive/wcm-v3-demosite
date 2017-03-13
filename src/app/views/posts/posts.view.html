@@ -1,0 +1,16 @@
+<h2>{{data.title}}</h2>
+
+<div class="posts">
+    <div class="post" *ngFor="let post of data.data">
+        <div class="post-banner">
+            <img src="http://localhost:4000/api/1.0.0/{{post.fields.banner.cropped.asset.url}}" alt="post.fields.banner.original.name">
+        </div>
+        <div class="post-content">
+            <h3>{{post.fields.title}}</h3>
+            <p>{{post.fields.summary}}</p>
+            <a routerLink="/en/{{post.uuid}}" class="extra-content-link" translate>
+                Read the full post<span class="fa fa-arrow-right"></span>
+            </a>
+        </div>
+    </div>
+</div>

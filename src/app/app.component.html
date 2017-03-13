@@ -1,0 +1,15 @@
+<aui-header>
+    <aui-header-logo>
+        <aui-logo [title]="'een logo voor A'" [src]="'/gfx/a-logo.svg'"></aui-logo>
+    </aui-header-logo>
+
+    <aui-header-menu-item *ngFor="let item of menu | async">
+        <a routerLink='/{{translate.currentLang}}/{{item.slug}}' class="button">{{item.title}}</a>
+    </aui-header-menu-item>
+</aui-header>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<app-dynamic-load [componentData]="footer" [partial]="true" *ngIf="getFooter | async"></app-dynamic-load>

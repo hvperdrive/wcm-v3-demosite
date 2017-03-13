@@ -1,0 +1,11 @@
+<h2>{{data.title}}</h2>
+
+<div class="testimonials">
+    <div class="testimonial" *ngFor="let testimonial of data.data">
+        <div class="bubble" [innerHTML]="testimonial.fields.body"></div>
+        <div class="author">
+            <h6>{{testimonial.fields.author}}</h6>
+            <a href="{{testimonial.fields.organisationUrl}}" class="org" target="_blank">{{testimonial.fields.organisation}}</a>
+        </div>
+    </div>
+</div>

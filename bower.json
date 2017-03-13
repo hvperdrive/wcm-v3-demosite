@@ -1,0 +1,22 @@
+{
+    "name": "wcmv3demo-app",
+    "version": "0.0.0",
+    "description": "Wcmv3demo app",
+    "keywords": [
+        "angular2",
+        "typescript"
+    ],
+    "author": "",
+    "homepage": "",
+    "dependencies": {
+        "sasskit": "ssh://git@git.antwerpen.be/astad/sasskit_bower_scss.git#^2.0.0"
+    },
+    "main": [
+        "dist/index.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "private": true
+}
