@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dynamic } from 'wcm-template-manager-ng2';
+// import { Dynamic } from '../../components/dynamic/dynamic';
 
 @Component({
     selector: 'challenges-page',
@@ -8,7 +9,10 @@ import { Dynamic } from 'wcm-template-manager-ng2';
 })
 export class ChallengesPage implements OnInit {
     static selectComponent: Dynamic = {
-        selector: 'content-challenges'
+        type: 'content', // view, partial, content
+        contentType: 'page',
+        safeLabel: 'challenges',
+        slug: 'challenges'
     };
 
     @Input()

@@ -6,6 +6,6 @@
 
 <section class="main-section main-section--{{view.value.contentType}}" *ngFor="let view of views">
     <div class="inner">
-        <app-dynamic-load [componentData]="view.value"></app-dynamic-load>
+        <app-dynamic-load [componentData]="view.value" type="view"></app-dynamic-load>
     </div>
 </section>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dynamic } from 'wcm-template-manager-ng2';
+// import { Dynamic } from '../../components/dynamic/dynamic';
 
 @Component({
     selector: 'faq-view',
@@ -8,7 +9,10 @@ import { Dynamic } from 'wcm-template-manager-ng2';
 })
 export class FAQView implements OnInit {
     static selectComponent: Dynamic = {
-        selector: 'view-faq'
+        type: 'view', // view, partial, content
+        contentType: 'faq',
+        viewReference: '90b886dd-effd-4909-a3ff-309799e43219',
+        viewType: 'faq'
     };
 
     @Input()

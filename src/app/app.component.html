@@ -12,4 +12,4 @@
     <router-outlet></router-outlet>
 </main>
 
-<app-dynamic-load [componentData]="footer" [partial]="true" *ngIf="getFooter | async"></app-dynamic-load>
+<app-dynamic-load [componentData]="footer" type="partial" *ngIf="getFooter | async"></app-dynamic-load>

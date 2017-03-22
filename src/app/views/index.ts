@@ -5,6 +5,7 @@ import { PostsView } from './posts';
 import { ManifestoView } from './manifesto';
 import { ChallengesView } from './challenges';
 import { FAQView } from './faq';
+import { NoContentView } from './no-content';
 
 export const Views = [
     TestimonialsView,
@@ -13,5 +14,6 @@ export const Views = [
     PostsView,
     ManifestoView,
     ChallengesView,
-    FAQView
+    FAQView,
+    NoContentView
 ];

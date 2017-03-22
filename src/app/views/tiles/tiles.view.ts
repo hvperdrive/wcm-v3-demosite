@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dynamic } from 'wcm-template-manager-ng2';
+// import { Dynamic } from '../../components/dynamic/dynamic';
 
 @Component({
     selector: 'tiles-view',
@@ -8,7 +9,10 @@ import { Dynamic } from 'wcm-template-manager-ng2';
 })
 export class TilesView implements OnInit {
     static selectComponent: Dynamic = {
-        selector: 'view-tile'
+        type: 'view', // view, partial, content
+        contentType: 'tile',
+        viewReference: '38565bee-4d2d-426a-b815-2f5f864d88dd',
+        viewType: 'tiles'
     };
 
     @Input()

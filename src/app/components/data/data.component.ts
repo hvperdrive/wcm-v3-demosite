@@ -5,7 +5,7 @@ import 'rxjs/add/operator/do';
 
 @Component({
     selector: 'app-data',
-    template: '<app-dynamic-load [componentData]="data"></app-dynamic-load>',
+    template: '<app-dynamic-load [componentData]="data" type="content"></app-dynamic-load>',
     styles:  [':host { display: block; }']
 })
 export class DataComponent {

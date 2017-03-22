@@ -8,7 +8,7 @@
         <div class="post-content">
             <h3>{{post.fields.title}}</h3>
             <p>{{post.fields.summary}}</p>
-            <a routerLink="/en/{{post.uuid}}" class="extra-content-link" translate>
+            <a routerLink="/en/{{post.meta.slug}}" class="extra-content-link" translate>
                 Read the full post<span class="fa fa-arrow-right"></span>
             </a>
         </div>

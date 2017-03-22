@@ -15,8 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-// import { DynamicLoadModule } from 'wcm-template-manager-ng2';
-import { DynamicLoadModule } from './components/dynamic/dynamic-load.module';
+import { DynamicLoadModule } from 'wcm-template-manager-ng2';
+// import { DynamicLoadModule } from './components/dynamic/dynamic-load.module';
 import { DataComponent } from './components/data/data.component';
 
 // Redux

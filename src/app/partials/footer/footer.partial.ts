@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dynamic } from 'wcm-template-manager-ng2';
+// import { Dynamic } from '../../components/dynamic/dynamic';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,7 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class FooterPartial implements OnInit {
     static selectComponent: Dynamic = {
-        selector: 'partial-footer'
+        type: 'partial', // view, partial, content
+        contentType: 'footer',
+        safeLabel: 'footer'
     };
 
     @Input()

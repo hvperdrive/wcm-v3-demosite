@@ -3,16 +3,16 @@ import { Dynamic } from 'wcm-template-manager-ng2';
 // import { Dynamic } from '../../components/dynamic/dynamic';
 
 @Component({
-  selector: 'no-content-page',
+  selector: 'no-content-view',
   template: `
     <div>
-      <h1>There was no component found for this content so the fallback component was used</h1>
+      <h1>There was no component found for this view so the fallback component was used</h1>
     </div>
   `
 })
-export class NoContentPage {
+export class NoContentView {
     static selectComponent: Dynamic = {
-        type: 'content', // view, partial, content
+        type: 'view', // view, partial, content
         fallback: true
     };
 }
