@@ -4,7 +4,6 @@
 - Fix translations
 - Further implement redux
 - Demo dynamic views with taxonomies
-- Finish finetuning Dynamic component and implement the changes to [the module](https://github.com/hvperdrive/wcm-template-manager-ng2)
 
 Angular 2 app created with the Angular 2 App generator.
 
