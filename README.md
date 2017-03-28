@@ -4,6 +4,7 @@
 - Fix translations
 - Further implement redux
 - Demo dynamic views with taxonomies
+- Add server proxy
 
 Angular 2 app created with the Angular 2 App generator.
 
