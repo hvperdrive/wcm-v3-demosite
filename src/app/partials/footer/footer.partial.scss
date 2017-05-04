@@ -1,20 +1,28 @@
 /* styles for footer partial only */
-@import "sasskit/dist/scss/api";
 
 :host {
     display: block;
 }
 
-.button {
-    .btn-facebook {
-        background-color: #3B5998;
+.footer-columns {
+    .footer-column {
+        float: left;
+        width: 32%;
+        padding: 1rem;
+        text-align: center;
+
+        .footer-title {
+            margin-bottom: 1rem;
+        }
+
+        &:nth-child(2) {
+            margin: 0 1%;
+        }
     }
 
-    .btn-twitter {
-        background-color: #00ACED;
-    }
-
-    .btn-instagram {
-        background-color: #3F729B;
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
     }
 }

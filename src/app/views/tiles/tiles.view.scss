@@ -1,5 +1,5 @@
 /* styles for tiles view only */
-@import "sasskit/dist/scss/api";
+$light-grey-background: #F3F3F3;
 
 :host {
     display: block;
@@ -13,18 +13,6 @@
     justify-content: flex-start;
 
     .tile {
-        width: calc(100% - 24px);
-        max-width: 320px;
-        box-sizing: border-box;
-        padding: 12px;
-        margin: 12px;
-
-        .tile-inner {
-            background-color: rgba(255, 255, 255, .8);
-            width: 100%;
-            height: 100%;
-            padding: 12px;
-            border: 1px solid $line;
-        }
+        margin: 1rem;
     }
 }

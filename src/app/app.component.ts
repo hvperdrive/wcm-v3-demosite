@@ -1,4 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    ViewEncapsulation
+} from '@angular/core';
 
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MenuService } from './services/menu.service';
@@ -6,7 +10,7 @@ import { ContentService } from './services/content.service';
 import { Observable } from 'rxjs/Observable';
 
 import { NgRedux, select } from '@angular-redux/store';
-import { IAppState, LangActions } from './store';
+// import { AppState, LangActions } from './store';
 
 @Component({
     selector: 'app',
@@ -14,7 +18,7 @@ import { IAppState, LangActions } from './store';
     styleUrls: [
         './app.component.scss'
     ],
-    templateUrl: './app.component.html',
+    templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
     menu: Observable<any>;
@@ -26,8 +30,8 @@ export class AppComponent implements OnInit {
         public translate: TranslateService,
         private menuService: MenuService,
         private contentService: ContentService,
-        private ngRedux: NgRedux<IAppState>,
-        private langActions: LangActions
+        // private ngRedux: NgRedux<AppState>,
+        // private langActions: LangActions
     ) {
         // this language will be used as a fallback when a translation isn't found in the current language
         translate.setDefaultLang('nl');
@@ -57,6 +61,6 @@ export class AppComponent implements OnInit {
     }
 
     setLanguage(lang) {
-        this.ngRedux.dispatch(this.langActions.set());
+        // this.ngRedux.dispatch(this.langActions.set());
     }
 }

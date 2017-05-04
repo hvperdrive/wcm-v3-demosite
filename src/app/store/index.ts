@@ -1,25 +1,22 @@
-import { Injectable } from '@angular/core';
-import { Action } from 'redux';
+import { combineReducers } from 'redux';
+import { TRANSLATIONS_REDUCER } from './translations';
 
-@Injectable()
-export class LangActions {
-    static SET = 'SET';
-
-    set(): Action {
-        return { type: LangActions.SET };
-    }
-}
-
-export interface IAppState {
-    lang: string;
+export interface AppState {
+    language: any;
 };
 
-export const INITIAL_STATE: IAppState = { lang: 'nl' };
+export const ROOT_REDUCER = combineReducers<AppState>({
+    language: TRANSLATIONS_REDUCER
+});
 
-export function rootReducer (state: IAppState, action: Action): IAppState {
-    switch (action.type) {
-        case LangActions.SET: return { lang: state.lang };
-    }
-
-    return state;
+export const INITIAL_STATE: AppState = {
+    language: 'en'
 };
+
+export const STORE_MIDDLEWARE = [
+];
+
+export const ACTION_TYPES = {
+};
+
+export * from './store.module';

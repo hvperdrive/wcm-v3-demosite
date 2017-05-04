@@ -1,10 +1,24 @@
-@import 'sasskit/dist/scss/api';
-@import '@acpaas-ui/aui-kit/dist/scss/api';
+$header-height: 48px;
+$white-background: #FFF;
+$light-grey-background: #F3F3F3;
+$dark-grey-background: #B0B0B0;
+$blue-background: #0064B4;
+$dark-blue-background: #059;
 
 body {
     height: auto;
     min-height: 100%;
     display: flex;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 1rem;
 }
 
 app {
@@ -24,7 +38,7 @@ aui-footer {
 }
 
 main {
-    background: $alpha-background;
+    background: $white-background;
     min-height: auto !important;
     flex: 1;
 }
@@ -43,7 +57,7 @@ main {
 
     &.main-section--feature,
     &.main-section--testimonial {
-        background-color: $beta-background;
+        background-color: $light-grey-background;
     }
 }
 
@@ -51,12 +65,12 @@ main {
     font-size: 1.2rem;
     font-weight: 700;
     text-decoration: underline;
-    color: $alpha-font-color;
+    color: $blue-background;
     display: inline-block;
     position: relative;
 
     .fa {
-        background: $alpha-ui-color;
+        background: $blue-background;
         color: white;
         height: 2.25rem;
         width: 2.25rem;

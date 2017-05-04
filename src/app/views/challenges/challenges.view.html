@@ -1,6 +1,6 @@
 <h2>{{data.title}}</h2>
 
-<table class="contrast">
+<table class="a-table a-table--primary a-table--striped">
     <thead>
         <tr>
             <th translate>Challenge</th>
@@ -11,7 +11,7 @@
     <tbody>
         <tr *ngFor="let challenge of data.data">
             <td>
-                <h3>{{challenge.fields.title}}</h3>
+                <h5>{{challenge.fields.title}}</h5>
                 <p>{{challenge.fields.description}}</p>
             </td>
             <td>

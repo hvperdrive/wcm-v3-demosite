@@ -13,10 +13,8 @@ const helpers = require('./helpers');
 const ENV = process.env.NODE_ENV || 'DEV';
 const METADATA = require('./metadata.js');
 const HEADERCONFIG = require('./head.conf.js');
+const SERVERCONFIG = require('../package.json').config;
 
-const cssLoaderOptions = {
-    url: false
-};
 const sassLoaderOptions = {
     includePaths: [
         helpers.root('node_modules'),
@@ -33,13 +31,19 @@ const postCssLoaderOptions = {
 
 module.exports = {
     /**
+     * Context
+     * Reference: https://webpack.js.org/configuration/entry-context/#context
+     */
+    context: helpers.root('src'),
+
+    /**
      * Entry
      * Reference: https://webpack.js.org/configuration/entry-context/#entry
      */
     entry: {
-        'polyfills': './src/polyfills.ts',
-        'vendor': './src/vendor.ts',
-        'app': './src/main.ts'
+        'polyfills': './polyfills.ts',
+        'vendor': './vendor.ts',
+        'app': './main.ts'
     },
 
     /**
@@ -48,7 +52,7 @@ module.exports = {
      */
     output: {
         path: helpers.root('dist'),
-        publicPath: 'http://localhost:3000/',
+        publicPath: `http://localhost:${SERVERCONFIG.app.port}/`,
         filename: 'js/[name].js',
         chunkFilename: '[id].chunk.js'
     },
@@ -114,8 +118,7 @@ module.exports = {
                     fallback: 'style-loader',
                     use: [
                         {
-                            loader: 'css-loader',
-                            options: cssLoaderOptions
+                            loader: 'raw-loader'
                         },
                         {
                             loader: 'postcss-loader',
@@ -134,16 +137,15 @@ module.exports = {
                     fallback: 'style-loader',
                     use: [
                         {
-                            loader: 'css-loader',
-                            options: cssLoaderOptions
-                        },
-                        {
-                            loader: 'postcss-loader',
-                            options: postCssLoaderOptions
+                            loader: 'raw-loader'
                         },
                         {
                             loader: 'sass-loader',
                             options: sassLoaderOptions
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: postCssLoaderOptions
                         }
                     ]
                 })
@@ -173,12 +175,12 @@ module.exports = {
                         loader: 'raw-loader'
                     },
                     {
-                        loader: 'postcss-loader',
-                        options: postCssLoaderOptions
-                    },
-                    {
                         loader: 'sass-loader',
                         options: sassLoaderOptions
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: postCssLoaderOptions
                     }
                 ]
             },
@@ -215,9 +217,13 @@ module.exports = {
          */
         new webpack.ContextReplacementPlugin(
             // The (\\|\/) piece accounts for path separators in *nix and Windows
-            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+            /angular(\\|\/)core(\\|\/)@angular/,
             helpers.root('./src') // location of your src
         ),
+
+        new webpack.DllReferencePlugin({
+            manifest: require(helpers.root('/dll/vendors-manifest.json'))
+        }),
 
         /**
          * Automagically create favicons for targeted systems
@@ -249,7 +255,7 @@ module.exports = {
          * Reference: https://github.com/jantimon/html-webpack-plugin
          */
         new HtmlWebpackPlugin({
-            template: 'src/public/index.html',
+            template: './public/index.html',
             title: METADATA.title,
             chunksSortMode: 'dependency',
             metadata: METADATA,
@@ -268,12 +274,8 @@ module.exports = {
 
         new CopyWebpackPlugin([
             {
-                from: helpers.root('bower_components/sasskit/dist/fonts'),
-                to: 'fonts'
-            },
-            {
-                from: helpers.root('bower_components/sasskit/dist/img'),
-                to: 'img'
+                from: helpers.root('node_modules/core_branding_scss/dist/assets'),
+                to: 'assets'
             }
         ])
     ],
@@ -298,16 +300,11 @@ module.exports = {
      * Reference: https://webpack.js.org/configuration/dev-server/
      */
     devServer: {
-        contentBase: './src/public',
+        contentBase: helpers.root('/src/public'),
         historyApiFallback: true,
-        proxy: {
-            '/api/**': {
-                target: 'http://localhost:3030',
-                pathRewrite: {
-                    '^/api': ''
-                },
-                secure: false
-            }
+        watchOptions: {
+           aggregateTimeout: 300,
+            poll: 1000
         },
         quiet: true,
         stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose

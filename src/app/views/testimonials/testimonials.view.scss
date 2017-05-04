@@ -1,5 +1,6 @@
 /* styles for testimonials view only */
-@import "sasskit/dist/scss/api";
+$light-grey-background: #F3F3F3;
+$dark-grey-background: #B0B0B0;
 
 :host {
     display: block;
@@ -7,63 +8,31 @@
 }
 
 .testimonials {
+    max-width: 27rem;
+    // margin: 0 auto;
+
     .testimonial {
-        width: 45%;
-
-        .bubble {
-            background: $st-tropaz;
-            background: -webkit-gradient(linear, 0 0, 0 100%, from($ship-cove), to($st-tropaz));
-            background: -moz-linear-gradient($ship-cove, $st-tropaz);
-            background: -o-linear-gradient($ship-cove, $st-tropaz);
-            background: linear-gradient($ship-cove, $st-tropaz);
-            position: relative;
-            padding: 12px;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
-            margin: 12px 0 24px;
-            color: white;
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -15px;
-                display: block;
-                width: 0;
-                border-width: 15px 15px 0;
-                border-style: solid;
-                border-color: $st-tropaz transparent;
-            }
-        }
+        width: 18rem;
+        margin-bottom: 2rem;
 
         .author {
-            font-size: 18px;
+            font-size: 1.15rem;
         }
 
         &:nth-child(even) {
             margin-left: auto;
 
-            .bubble {
-                &::after {
-                    right: 50px;
-                }
-            }
-
             .author {
                 text-align: right;
-                margin-right: 10px;
+                margin-top: 1rem;
+                margin-right: .5rem;
             }
         }
 
         &:nth-child(odd) {
-            .bubble {
-                &::after {
-                    left: 50px;
-                }
-            }
-
             .author {
-                margin-left: 10px;
+                margin-top: 1rem;
+                margin-left: .5rem;
             }
         }
     }

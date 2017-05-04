@@ -3,6 +3,7 @@ const chalk = require('chalk');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 let config = require('./webpack.config.common');
+const tsConfig = require('./tsloader.conf');
 
 module.exports = function makeWebpackConfig() {
     console.log(chalk.bgBlack.yellow('Using test config...')); // eslint-disable-line no-console
@@ -12,6 +13,8 @@ module.exports = function makeWebpackConfig() {
     delete config.entry; // revert to setting empty object when https://github.com/webpack-contrib/karma-webpack/pull/221/commits/1f8b5132ceab70c9d5df1f3faa1bbf73da3647e2 is merged
 
     config.output = {};
+
+    config.module.rules.push(tsConfig.loader);
 
     config.module.rules.push({
         test: /\.ts*/,

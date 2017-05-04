@@ -4,7 +4,7 @@
     "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "noEmitHelpers": true,
     "noUnusedParameters": false,
     "importHelpers": true
@@ -16,14 +16,10 @@
     "useTranspileModule": true,
     "useCache": true
   },
-  "angularCompilerOptions": {
-    "entryModule": "src/app/app.module#AppModule"
-  },
   "include": [
     "src"
   ],
   "exclude": [
-    "**/*.ngfactory.ts",
-    "**/*.spec.ts"
+    "**/*.ngfactory.ts"
   ]
 }

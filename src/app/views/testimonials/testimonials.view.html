@@ -1,8 +1,8 @@
 <h2>{{data.title}}</h2>
 
 <div class="testimonials">
-    <div class="testimonial" *ngFor="let testimonial of data.data">
-        <div class="bubble" [innerHTML]="testimonial.fields.body"></div>
+    <div class="testimonial" *ngFor="let testimonial of data.data; let i = index;">
+        <div class="a-tooltip"  [ngClass]="{'a-tooltip--top-left': i % 2 !== 0,  'a-tooltip--top-right': i % 2 === 0}" [innerHTML]="testimonial.fields.body"></div>
         <div class="author">
             <h6>{{testimonial.fields.author}}</h6>
             <a href="{{testimonial.fields.organisationUrl}}" class="org" target="_blank">{{testimonial.fields.organisation}}</a>

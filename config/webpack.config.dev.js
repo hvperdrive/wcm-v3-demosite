@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const chalk = require('chalk');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const helpers = require('./helpers');
 let config = require('./webpack.config.common');
 

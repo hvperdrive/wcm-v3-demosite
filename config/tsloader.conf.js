@@ -3,19 +3,24 @@ const ENV = process.env.NODE_ENV || 'DEV';
 const AOT = process.env.AOT || false;
 const atlConf = {
     DEV: {
-        options: {},
+        options: {
+            forkChecker: true
+        },
         exclude: [/\.(spec|e2e)\.ts$/]
     },
     PROD: {
         options: {
+            forkChecker: true,
             removeComments: true
         },
         exclude: [/\.(spec|e2e)\.ts$/]
     },
     TEST: {
         options: {
+            forkChecker: true,
             inlineSourceMap: true,
-            sourceMap: false
+            sourceMap: false,
+            configFileName: 'tsconfig.test.json'
         },
         exclude: [/\.(e2e)\.ts$/]
     }

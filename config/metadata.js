@@ -1,6 +1,8 @@
 module.exports = {
-    title: 'Wcmv3demo app | ACPaaS Angular 2 generator',
-    description: 'Wcmv3demo app made with the ACPaaS Angular 2 generator.',
+    title: 'Wcmv3demo app | ACPaaS Angular App generator',
+    description: 'Wcmv3demo app made with the ACPaaS Angular App generator.',
     baseUrl: '/',
-    themeColor: '#CE1A32'
+    themeColor: '#CE1A32',
+    GTMContainerId: '',
+    GATag: ''
 };

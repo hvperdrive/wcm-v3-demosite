@@ -1,39 +1,45 @@
 <aui-footer>
-    <aui-footer-column-first>
-        <h5>{{data.fields.text.fields.text}}</h5>
-    </aui-footer-column-first>
+    <aui-footer-content>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h5 class="footer-title">Title</h5>
+            </div>
 
-    <aui-footer-column-second>
-        <h5 translate>Social Media</h5>
-        <p>
-            <a href="{{data.fields.social.fields.facebook.url}}" class="button small has-icon btn-facebook" target="_blank">
-                <span class="fa fa-facebook"></span>
-                <span class="button-text">{{data.fields.social.fields.facebook.description}}</span>
-            </a>
-            <a href="{{data.fields.social.fields.twitter.url}}" class="button small has-icon btn-twitter" target="_blank">
-                <span class="fa fa-twitter"></span>
-                <span class="button-text">{{data.fields.social.fields.twitter.description}}</span>
-            </a>
-            <a href="{{data.fields.social.fields.instagram.url}}" class="button small has-icon btn-instagram" target="_blank">
-                <span class="fa fa-instagram"></span>
-                <span class="button-text">{{data.fields.social.fields.instagram.description}}</span>
-            </a>
-        </p>
-    </aui-footer-column-second>
+            <div class="footer-column">
+                <h5 class="footer-title" translate>Social Media</h5>
+                <ul class="m-icon-list m-icon-list--negative">
+                    <li>
+                        <a href="{{data.fields.social.fields.facebook.url}}">
+                            <span class="fa fa-facebook"></span>
+                            {{data.fields.social.fields.facebook.description}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{data.fields.social.fields.twitter.url}}">
+                            <span class="fa fa-twitter"></span>
+                            {{data.fields.social.fields.twitter.description}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{data.fields.social.fields.instagram.url}}">
+                            <span class="fa fa-instagram"></span>
+                            {{data.fields.social.fields.instagram.description}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-    <aui-footer-column-third>
-        <h5 translate>See this website in:</h5>
-        <ul>
-            <li translate (click)="setLanguage('nl')">Dutch</li>
-            <li translate (click)="setLanguage('en')">English</li>
-        </ul>
-    </aui-footer-column-third>
+            <div class="footer-column">
+                <h5 class="footer-title">{{data.fields.text.fields.text}}</h5>
+            </div>
+        </div>
+    </aui-footer-content>
 
-    <aui-footer-column-bottom>
+    <aui-footer-bottom>
         <!-- Use subfooter -->
         <aui-subfooter>
             <!-- Use copyright -->
             <aui-copyright domain="district01.be"></aui-copyright>
         </aui-subfooter>
-    </aui-footer-column-bottom>
+    </aui-footer-bottom>
 </aui-footer>

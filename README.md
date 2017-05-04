@@ -10,7 +10,7 @@ Angular 2 app created with the Angular 2 App generator.
 
 ## Quickstart
 
-Start of with:
+Install dependencies (will trigger a bower install if necessary and build the vendor DLL):
 ```
 npm install
 ```
@@ -18,7 +18,7 @@ then run:
 ```
 npm start
 ```
-and you're done.
+Your app will open in [the browser](http://localhost:3000).
 
 ## Available npm scripts
 
@@ -33,10 +33,11 @@ and you're done.
     * remap: remap the coverage to typescript
     * report: create a report
 * `build`: create a clean production ready build of you app
-* `json-server`: start the json-server (default port 3030)
-* `webpack-server`: start the webpack-dev-server (default port 3000)
-* `server`: start both the json & webpack server (using concurrently)
+* `build:vendor`: rebuild the vendor DLL
+* `server`: start the webpack-dev-server (default port 3000)
+    * `aot`: start the dev server in [aot](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) mode
     * `prod`: start the production server
+        * `aot`: start the production server in [aot](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) mode
 * webdriver
     * start: start the webdriver
     * update: update the webdriver
