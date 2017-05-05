@@ -4,7 +4,7 @@
     </aui-header-logo>
 
     <aui-header-menu-item *ngFor="let item of menu | async">
-        <a routerLink='/{{translate.currentLang}}/{{item.slug}}' class="a-button">{{item.title}}</a>
+        <a routerLink='/{{translateService.currentLang}}/{{item.slug}}' class="a-button">{{item.title}}</a>
     </aui-header-menu-item>
 </aui-header>
 

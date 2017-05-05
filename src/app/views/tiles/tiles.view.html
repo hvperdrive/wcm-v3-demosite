@@ -3,7 +3,7 @@
 <div class="tiles">
     <div class="tile m-card" style="max-width: 400px" *ngFor="let tile of data.data">
         <div class="m-card__image">
-            <img src="{{'http://localhost:4000/api/1.0.0/' + tile.fields.image.cropped.asset.url}}" alt="Card Image">
+            <img src="{{tile.fields.image.cropped.asset.url}}" alt="Card Image">
         </div>
 
         <div class="m-card__body">

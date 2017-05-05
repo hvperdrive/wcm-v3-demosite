@@ -1,11 +1,17 @@
 /* styles for faq view only */
+$light-grey-border: #F3F3F3;
+
 :host {
     display: block;
     padding: 48px 0;
 }
 
 .questions {
+    margin-top: 2rem;
+
     .question {
-        margin-bottom: 48px;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $light-grey-border;
+        margin-bottom: 5rem;
     }
 }

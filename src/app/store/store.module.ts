@@ -3,6 +3,7 @@ import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store'
 import thunk from 'redux-thunk';
 
 import { AppState, ROOT_REDUCER, INITIAL_STATE, STORE_MIDDLEWARE } from './index';
+import { LanguageActionCreator } from './language';
 
 const DEVMODE = process.env.NODE_ENV === 'DEV';
 
@@ -11,7 +12,7 @@ const DEVMODE = process.env.NODE_ENV === 'DEV';
         NgReduxModule
     ],
     providers: [
-        // list your injectable services (like actioncreators) here
+        LanguageActionCreator
     ]
 })
 export class StoreModule {

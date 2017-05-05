@@ -275,7 +275,7 @@ module.exports = {
         new CopyWebpackPlugin([
             {
                 from: helpers.root('node_modules/core_branding_scss/dist/assets'),
-                to: 'assets'
+                to: 'css/assets'
             }
         ])
     ],

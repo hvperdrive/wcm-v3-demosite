@@ -36,13 +36,6 @@ Thumbs.db
 # AOT #
 /aot
 
-# Dist #
-/dist
-/public/__build__/
-/src/*/__build__/
-__build__/**
-.webpack.json
-
 # Doc #
 /doc/
 

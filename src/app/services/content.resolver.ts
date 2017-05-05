@@ -14,6 +14,7 @@ export class ContentResolver implements Resolve<any[]> {
         state: RouterStateSnapshot
     ): Observable<any[]> {
         let getContent;
+
         if (state.url === '/home') {
             getContent = this.contentService.getContentBySlug(
                  'en',

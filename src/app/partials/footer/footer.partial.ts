@@ -1,30 +1,37 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+// import { Router, ActivatedRoute } from '@angular/router';
+
 import { Dynamic } from 'wcm-template-manager-ng2';
-// import { Dynamic } from '../../components/dynamic/dynamic';
-import { TranslateService } from '@ngx-translate/core';
+
+import { LanguageActionCreator } from '../../store/language';
 
 @Component({
     selector: 'footer-partial',
     styleUrls: ['./footer.partial.scss'],
     templateUrl: './footer.partial.html'
 })
-export class FooterPartial implements OnInit {
+export class FooterPartial {
     static selectComponent: Dynamic = {
         type: 'partial', // view, partial, content
         contentType: 'footer',
         safeLabel: 'footer'
     };
 
-    @Input()
-    data: any;
+    @Input() data: any;
 
     constructor(
-        private translate: TranslateService
+        public languageActionCreator: LanguageActionCreator,
+        // private router: Router,
+        // private route: ActivatedRoute
     ) {}
 
-    public ngOnInit() {}
+    public setLanguage(lang) {
+        this.languageActionCreator.setLanguage(lang);
 
-    setLanguage(lang) {
-        this.translate.use(lang);
+        // this.route.params.subscribe((params) => {
+        //     console.log(params);
+        // })
+
+        // console.log(this.route.snapshot.params);
     }
 }

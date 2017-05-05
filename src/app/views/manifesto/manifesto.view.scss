@@ -1,5 +1,17 @@
 /* styles for manifesto view only */
+$light-grey-border: #F3F3F3;
+
 :host {
     display: block;
     padding: 48px 0;
+}
+
+.manifestos {
+    margin-top: 2rem;
+
+    .manifesto {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $light-grey-border;
+        margin-bottom: 3rem;
+    }
 }

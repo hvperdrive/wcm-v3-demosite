@@ -1,5 +1,17 @@
 /* styles for feature view only */
+$dark-grey-border: #B0B0B0;
+
 :host {
     display: block;
     padding: 48px 0;
+}
+
+.featured-items {
+    margin-top: 2rem;
+
+    .featured-item {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $dark-grey-border;
+        margin-bottom: 3rem;
+    }
 }

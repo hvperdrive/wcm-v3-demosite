@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
-import { TRANSLATIONS_REDUCER } from './translations';
+import { LANGUAGE_REDUCER, LanguageState, INITIAL_LANGUAGE_STATE } from './language';
 
 export interface AppState {
-    language: any;
+    settings: LanguageState
 };
 
 export const ROOT_REDUCER = combineReducers<AppState>({
-    language: TRANSLATIONS_REDUCER
+    settings: LANGUAGE_REDUCER
 });
 
 export const INITIAL_STATE: AppState = {
-    language: 'en'
+    settings: INITIAL_LANGUAGE_STATE
 };
 
 export const STORE_MIDDLEWARE = [
